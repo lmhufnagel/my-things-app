@@ -9,5 +9,12 @@ import thunk from "redux-thunk";
 import {rootReducer} from "./reducers/rootReducer";
 import { BrowserRouter as Router } from "react-router-dom";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+  <Router>
+    <App />
+  </Router>
+</Provider>,
+document.getElementById('root'));
+);
 registerServiceWorker();
